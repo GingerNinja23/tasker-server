@@ -28,13 +28,13 @@ class myHandler(BaseHTTPRequestHandler):
 			if(vlc_pid):
 				vlc_pid.kill()
 			season = ("0"+str(random.randint(1,10)))[-2:]
-			season_path = "H:\TV Series\Friends\Friends Season "+str(season)+" [720p]"
+			season_path = "F:\F.R.I.E.N.D.S\Season "+str(season)+" [720p]"
 			random_file_path = random.choice(os.listdir(season_path))
 			while(random_file_path[-4:]==".srt"):
 				random_file_path = random.choice(os.listdir(season_path))
 			print "Playing FRIENDS Episode"+random_file_path 
 			vlc_pid = subprocess.Popen(["C:/Program Files (x86)/VideoLAN/VLC/vlc.exe",season_path+"\\"+random_file_path])
-			self.wfile.write("Random FRIENDS Episode Playing")
+			self.wfile.write("Playing FRIENDS Episode"+random_file_path)
 			return
 		return
 
