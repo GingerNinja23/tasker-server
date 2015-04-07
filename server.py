@@ -34,7 +34,7 @@ class myHandler(BaseHTTPRequestHandler):
 				random_file_path = random.choice(os.listdir(season_path))
 			print "Playing FRIENDS Episode"+random_file_path 
 			vlc_pid = subprocess.Popen(["C:/Program Files (x86)/VideoLAN/VLC/vlc.exe",season_path+"\\"+random_file_path])
-			self.wfile.write("Random FRIENDS Episode Playing")
+			self.wfile.write("Playing FRIENDS Episode "+random_file_path)
 			return
 		return
 
